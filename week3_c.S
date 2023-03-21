@@ -1,0 +1,11 @@
+.TEXT
+	MOV R0,#5
+	L1:	CMP R0,#0
+		BGT P
+		BLT N
+		MOV R1,#1
+		SWI 0X011
+	P:	MOV R1,#2
+		SWI 0X011
+	N:	MOV R1,#3
+		SWI 0X011
