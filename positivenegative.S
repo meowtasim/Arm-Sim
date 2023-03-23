@@ -1,0 +1,14 @@
+.DATA
+	A:.WORD -15
+.TEXT
+	LDR R1,=A
+	LDR R2,[R1]
+	MOV R9,#0
+	MOV R7,#0;COUNTER
+	L:	ADD R7,R7,#1
+		ADD R2,R9,R2,LSR #1
+		CMP R7,#31;JUMP
+		BNE L
+	CMP R2,#1
+	MOVEQ R4,#1;negative
+	MOVNE R4,#0;positive
