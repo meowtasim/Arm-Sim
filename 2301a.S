@@ -1,0 +1,14 @@
+.DATA
+	B:.WORD 96
+.TEXT
+	MOV R2,#5
+	MOV R3,#-5
+	LDR R5,=B
+	ADDS R1,R2,R3
+	BEQ L
+	MOV R4,#0
+	STR R4,[R5]
+	B DON
+    L: MOV R4,#1
+	STR R4,[R5]
+	DON: SWI 0x011

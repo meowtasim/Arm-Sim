@@ -1,0 +1,13 @@
+.TEXT
+	MOV R0,#6
+	SUB R0,R0,#2
+	MOV R1,#0
+	MOV R2,#1
+	L:	MOV R4,R2
+		ADD R2,R2,R1
+		MOV R1,R4
+		SUB R0,R0,#1
+		CMP R0,#0
+		BNE L
+	MOV R7,R2
+		
